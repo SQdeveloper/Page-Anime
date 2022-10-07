@@ -4,8 +4,15 @@ const imgLogo = document.querySelector(".logo img");
 const slider = document.querySelector(".slider");
 const arrowNext = document.querySelector(".swiper-button-next");
 const arrowPrev = document.querySelector(".swiper-button-prev");
+const pText = document.querySelectorAll(".show p");
+const space = "<p style='opacity:0'>g</p>";
+const nameAnimes = [`Jujutsu${space}Kaisen`, `One${space}Punch${space}Man`, `Jujutsu${space}Kaisen`, `Boku${space}No${space}Heroe`, `Black${space}Clover`, `Kimetsu${space}No${space}Yaiba`, `Hunter${space}x${space}Hunter`, `One${space}Piece`];
 let index = 1;
+const img = document.querySelectorAll(".footer picture img");
 
+//Inicializamos el nombre del primer anime
+pText[0].innerHTML = `Jujutsu${space}Kaisen`;
+pText[1].innerHTML = `Jujutsu${space}Kaisen`;
 //sombra para el primero
 tShadow1 = `0 0 5px rgba(216, 24, 255, 1),
 0 0 10px rgba(216, 24, 255, 1),
@@ -117,6 +124,14 @@ bShadow8 = `00 0 5px rgba(250, 237, 30,1),
 arrowNext.style.textShadow = tShadow1;
 arrowPrev.style.textShadow = tShadow1;
 
+//Eventos para abrir enlaces de redes sociales
+img[0].addEventListener("click", ()=>{
+    window.open("https://github.com/SQdeveloper");
+});
+img[1].addEventListener("click", ()=>{
+    window.open("https://www.linkedin.com/in/jefferson-silva-quinto-03b1a1252/");
+});
+
 function modification(color, shadowBox, shadowText){
     slider.style.backgroundColor = color;
     slider.style.boxShadow =  shadowBox;
@@ -125,6 +140,9 @@ function modification(color, shadowBox, shadowText){
 }
 
 function conditionals(){
+    pText[0].innerHTML = nameAnimes[index-1];
+    pText[1].innerHTML = nameAnimes[index-1];
+
     if(index == 1 || index == -7){
         modification("#800a97", bShadow1, tShadow1);
         index = 1;
@@ -151,8 +169,6 @@ function conditionals(){
         modification("#fe5304", bShadow8, tShadow8);
         index = 0;
     }
-    //6 #4720d6;
-    //4 "#800202"
 }
 
 //Eventos para los botones flechas next y prev

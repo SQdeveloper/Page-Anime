@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
 body {
   margin: 0;
-  background-color: rgb(15, 15, 15);
+  background-color: black;
   color: white;
 }
 
@@ -10,7 +10,7 @@ body {
 }
 
 section {
-  width: 80%;
+  width: 90%;
   margin: auto;
 }
 
@@ -79,14 +79,17 @@ section {
 .home .show {
   display: flex;
   align-items: center;
+  gap: 2.5rem;
 }
 .home .show p {
-  width: 12px;
+  width: 10px;
   word-wrap: break-word;
   text-align: center;
+  margin: 0 0.3rem;
+  transition: all 2s;
 }
 .home .show .cont-slider .slide-content {
-  margin: 0 6rem;
+  margin: 0 5rem;
   overflow: hidden;
   height: 450px;
 }
@@ -132,8 +135,15 @@ section {
 .topTen .cont-cards .card .resume {
   position: absolute;
   color: black;
-  width: 50%;
-  right: 0;
+  width: 46%;
+  right: 5px;
+}
+.topTen .cont-cards .card .resume h1 {
+  margin: 0;
+}
+.topTen .cont-cards .card .resume h4 {
+  margin: 0 0 1rem 0;
+  color: #777171;
 }
 .topTen .cont-cards .card:before {
   content: "";
@@ -141,4 +151,33 @@ section {
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, rgba(155, 155, 155, 0) 30%, white 50%);
+}
+
+.footer {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  background-color: rgb(22, 22, 22);
+  color: white;
+  width: 100%;
+  height: 3.5rem;
+}
+.footer picture {
+  display: flex;
+  position: absolute;
+  right: 25px;
+  gap: 15px;
+}
+.footer picture img {
+  width: 26px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.footer picture img:hover {
+  transform: scale(1.3);
+}
+.footer p {
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */

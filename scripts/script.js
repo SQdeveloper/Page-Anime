@@ -7,8 +7,15 @@ const arrowPrev = document.querySelector(".swiper-button-prev");
 const pText = document.querySelectorAll(".show p");
 const space = "<p style='opacity:0'>g</p>";
 const nameAnimes = [`Jujutsu${space}Kaisen`, `One${space}Punch${space}Man`, `Jujutsu${space}Kaisen`, `Boku${space}No${space}Heroe`, `Black${space}Clover`, `Kimetsu${space}No${space}Yaiba`, `Hunter${space}x${space}Hunter`, `One${space}Piece`];
-let index = 1;
 const img = document.querySelectorAll(".footer picture img");
+const card = document.querySelectorAll(".topTen .cont-cards .card");
+const urlImages = ["luffyManga.jpg", "itadoriManga.jpg", "bokuManga.webp", "saitamaManga.jpg", "takemichiManga.jpg", "tanjiroManga.jpg", "ippoManga.jpg", "bakiManga.jpg", "astaManga.jpg", "gonManga.webp"];
+let index = 1;
+
+//ciclo for para modificar las url de imagenes de los divs card:after
+for(let i=0; i<urlImages.length; i++){
+    card[i].style.setProperty("--url", `url(../images/${urlImages[i]})`);
+}
 
 //Inicializamos el nombre del primer anime
 pText[0].innerHTML = `Jujutsu${space}Kaisen`;
@@ -188,11 +195,15 @@ check.addEventListener("change", ()=>{
         document.body.style.backgroundColor = "white";
         document.body.style.color = "black";
         imgLogo.style.filter = "invert(0)";
+        document.documentElement.style.setProperty("--colorText", "white");
+        document.documentElement.style.setProperty("--colorDegradado", "rgb(22,22,22)");
     }
     else {
         document.body.style.backgroundColor = "black";
         document.body.style.color = "white";
         imgLogo.style.filter = "invert(100%)";
+        document.documentElement.style.setProperty("--colorText", "black");
+        document.documentElement.style.setProperty("--colorDegradado", "rgb(250,250,250)");
     }
 });
 

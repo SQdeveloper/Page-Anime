@@ -218,3 +218,123 @@ section {
         margin: 0;
     }
 }
+
+@media (max-width:1090px){
+    .home .show .cont-slider .slide-content {
+        height: 400px;
+    }
+}
+@media (max-width:1000px){
+    .home {
+        .show {
+            gap: 1rem;
+            p {
+                font-size: 12px;
+                width: 5px;
+            }
+            .cont-slider{
+                .slide-content{
+                    height: 350px;
+                    margin: 0 3.5rem;
+                }
+                .swiper-button-next:after, .swiper-button-prev:after {
+                    font-size: 28px;
+                }
+            }
+        
+        }
+        #home__text    {
+            font-size: 10px;
+        }
+    }
+}
+
+@media (max-width:850px){
+    .home {
+        .show {
+            gap: .5rem;
+        }
+    }        
+}   
+@media (max-width:800px){
+    .home {
+        .show {
+            p {
+                position: absolute;
+                z-index: -1;
+                width: 0;
+                opacity: 0;
+            }
+        }
+    }        
+}
+
+@media (max-width:600px){
+    .topTen {
+        margin-bottom: 1rem;
+        .cont-cards {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            .card {
+                .resume {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:440px){
+    .home {
+        width: 100vw;
+        nav {
+            margin: 1rem .2rem;
+            p {
+                font-size: 14px;
+            }
+            img {
+                width: 20px;
+                height: 20px;
+            }
+            .switch {
+                transform: scale(.7);
+                margin-right: .5rem;
+            }
+        }
+        .show {
+            .cont-slider {
+                .slide-content {
+                    height: 200px;
+                    margin: 0 2.5rem;
+                }
+                .swiper-button-next:after, .swiper-button-prev:after {
+                    font-size: 13px;
+                } 
+            }
+        }
+        #home__text {
+            font-size: 10px;
+        }
+    }
+    .topTen {
+        margin-bottom: 1rem;
+        p {
+        font-size: 25px;
+        }
+        .cont-cards {
+            // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            .card {
+                height: 180px;
+                .resume {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+    .footer {
+        p {
+            font-size: 12px;
+        }
+    }
+}

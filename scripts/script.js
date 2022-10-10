@@ -146,10 +146,11 @@ function modification(color, shadowBox, shadowText){
     arrowPrev.style.textShadow = shadowText;
 }
 
-function conditionals(){
-    pText[0].innerHTML = nameAnimes[index-1];
-    pText[1].innerHTML = nameAnimes[index-1];
-
+function conditionals(clave, valueIndex){
+    if(clave == "right"){
+        pText[0].innerHTML = nameAnimes[index-1];
+        pText[1].innerHTML = nameAnimes[index-1];
+    }
     if(index == 1 || index == -7){
         modification("#800a97", bShadow1, tShadow1);
         index = 1;
@@ -174,19 +175,23 @@ function conditionals(){
     }
     else if(index == 8 || index == 0){
         modification("#fe5304", bShadow8, tShadow8);
-        index = 0;
+        index = valueIndex;
+    }
+    if(clave == "left"){
+        pText[0].innerHTML = nameAnimes[index-1];
+        pText[1].innerHTML = nameAnimes[index-1];
     }
 }
 
 //Eventos para los botones flechas next y prev
 arrowNext.addEventListener("click", ()=>{
     index++;
-    conditionals();
+    conditionals("right", 0);
 });
 
 arrowPrev.addEventListener("click", ()=>{
     index--;
-    conditionals();
+    conditionals("left", 8);
 });
 
 //Funcion para cambiar el color del fondo y de los textos
